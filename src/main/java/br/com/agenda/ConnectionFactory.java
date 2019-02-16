@@ -27,9 +27,9 @@ public class ConnectionFactory {
                 login = "root";
                 senha = "mysql@rrr612";
             }
-            Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("com.mysql.jdbc.Driver"); --Depreciated
             return DriverManager.getConnection("jdbc:mysql://localhost/rodrigo?useTimezone=true&serverTimezone=UTC", login, senha);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e.getMessage(), e);
         } finally {
             System.out.println("Conectado!");
